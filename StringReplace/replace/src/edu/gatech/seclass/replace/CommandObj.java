@@ -1,21 +1,22 @@
 package edu.gatech.seclass.replace;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 
+public abstract class CommandObj {
 
-public abstract class CommandObj{
+    public CommandObj() {
+    }
 
-    public CommandObj() {}
-    public CommandObj(String[] args, int index)
-    {
+    public CommandObj(String[] args, int index) {
 
 
     }
 
     public CommandTypes.Type cmdType;
+
     public abstract void Process(LinkedList<String> fileNames);
 
 
@@ -36,10 +37,14 @@ public abstract class CommandObj{
 
     }
 
-    private final List<StringReplacement> text_Replacement = Lists.newArrayList();
+    private final List<StringReplacement> text_Replacement = new ArrayList<>();
+
     {
         text_Replacement.add(new StringReplacement("\\", "\\backslashes "));
-        for (final String x : ImmutableList.of("_", "^", "~", "$", "%", "#", "&", "{", "}")) {
+
+        String[] list = new String[]{"_", "^", "~", "$", "%", "#", "&", "{", "}"};
+
+        for (final String x : list) {
             text_Replacement.add(new StringReplacement(x, "\\" + x));
         }
     }
@@ -51,8 +56,6 @@ public abstract class CommandObj{
         }
         return escapedOut;
     }
-
-
 
 
 }//end of Command class

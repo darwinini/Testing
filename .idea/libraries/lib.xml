@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/StringReplace/replace/D3Task2/lib/jcov.jar!/" />
+      <root url="jar://$PROJECT_DIR$/StringReplace/replace/D3Task2/lib/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/StringReplace/replace/D3Task2/lib/jcov_file_saver.jar!/" />
+      <root url="jar://$PROJECT_DIR$/StringReplace/replace/D3Task2/lib/replace.jar!/" />
+      <root url="jar://$PROJECT_DIR$/StringReplace/replace/D3Task2/lib/tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/StringReplace/replace/D3Task2/lib/junit-4.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
