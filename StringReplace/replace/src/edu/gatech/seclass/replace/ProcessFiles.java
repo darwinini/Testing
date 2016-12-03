@@ -5,20 +5,17 @@ import java.util.LinkedList;
 /**
  * Created by Darwin on 11/14/16.
  */
-public class ProcessFiles extends CommandObj
-{
+public class ProcessFiles extends CommandObj {
     private LinkedList<String> fileNames = new LinkedList<String>();
 
-    public ProcessFiles() {}
+    public ProcessFiles() {
+    }
 
 
-    public ProcessFiles(String[] args, int index)
-    {
+    public ProcessFiles(String[] args, int index) {
         int i = index + 1; // start after finding "--"
-        while(i < args.length && (!args[i].contains("-") || !args[i].contains("--")))
-        {
-            if(args[i] != " ")
-            {
+        while (i < args.length && (!args[i].contains("-") || !args[i].contains("--"))) {
+            if (args[i] != " ") {
                 fileNames.add(args[i]);
             }
 
@@ -26,13 +23,11 @@ public class ProcessFiles extends CommandObj
         }
     }
 
-    public void Process(LinkedList<String> fileNames)
-    {
+    public void Process(LinkedList<String> fileNames) {
         // Do Nothing
     }
 
-    public LinkedList<String> GetFileNames()
-    {
+    public LinkedList<String> GetFileNames() {
         return fileNames;
     }
 }

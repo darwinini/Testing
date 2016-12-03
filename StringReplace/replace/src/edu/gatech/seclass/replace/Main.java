@@ -1,14 +1,5 @@
 package edu.gatech.seclass.replace;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -22,16 +13,23 @@ public class Main {
         System.out.println("Welcome to the Replace Utility");
         System.out.println("Enter your input in the following format: Replace [-b] [-f] [-l] [-i] <from> <to> -- <filename> [<filename>] ");
 
+        String[] commandsArray;
 
-        Scanner inputCommand = new Scanner(System.in);
+        if (args.length != 0) {
+            commandsArray = args;
+        } else {
+            Scanner inputCommand = new Scanner(System.in);
+            String inputs = inputCommand.nextLine();
+            String commands = inputs.replace("Replace ", "");
 
-        String inputs = inputCommand.nextLine();
-        String commands = inputs.replace("Replace ", "");
-        String[] commandsArray = commands.split(" ");
+            commandsArray = commands.split(" ");
+        }
 
         CommandOptions cmdOptions = new CommandOptions();
         cmdOptions.parseCommandOptions(commandsArray);
+        cmdOptions.processCommand();
 
+        usage();
     }
 
     private static void usage() {

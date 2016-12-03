@@ -25,7 +25,6 @@ public class CommandOptions {
                 case "-b":
                     commandList.add(CommandFactory(CommandTypes.Type.Backup, args, i));
                     break;
-
                 case "-f":
                     commandList.add(CommandFactory(CommandTypes.Type.ReplaceFirst, args, i));
                     break;
@@ -48,14 +47,14 @@ public class CommandOptions {
 
     }//method
 
-    public void ProcessCommand() {
+    public void processCommand() {
+
         for (CommandObj cmdObj : commandList) {
             cmdObj.Process(fileNames);
         }
-
     }
 
-    public CommandObj CommandFactory(CommandTypes.Type type, String[] args, int index) {
+    private CommandObj CommandFactory(CommandTypes.Type type, String[] args, int index) {
 
         if (type == CommandTypes.Type.Backup) {
             return new Backup();
@@ -66,7 +65,7 @@ public class CommandOptions {
         } else if (type == CommandTypes.Type.ReplaceCaseInsensitive) {
             return new ReplaceCaseInsensitive();
         } else {
-            return new ReplaceCaseInsensitive();
+            return new ProcessFiles();
         }
 
 
