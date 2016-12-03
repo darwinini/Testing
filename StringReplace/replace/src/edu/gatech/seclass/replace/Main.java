@@ -10,9 +10,6 @@ public class Main {
         System.out.println("Welcome to the Replace Utility");
         System.out.println("Enter your input in the following format: Replace [-b] [-f] [-l] [-i] <from> <to> -- <filename> [<filename>] ");
 
-        System.out.println("Welcome to the Replace Utility");
-        System.out.println("Enter your input in the following format: Replace [-b] [-f] [-l] [-i] <from> <to> -- <filename> [<filename>] ");
-
         String[] commandsArray;
 
         if (args.length != 0) {
@@ -27,7 +24,6 @@ public class Main {
 
         CommandOptions cmdOptions = new CommandOptions();
         cmdOptions.parseCommandOptions(commandsArray);
-        cmdOptions.processCommand();
 
         usage();
     }
