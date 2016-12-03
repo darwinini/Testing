@@ -44,5 +44,4 @@ public class MyMainTest {
         assertEquals("The output differs!", "Usage: Replace [-b] [-f] [-l] [-i] <from> <to> " +
                 "-- <filename> [<filename>]*", errStream.toString().trim());
     }
-
 }
